@@ -1,0 +1,31 @@
+package dss_datatypes_orset;
+
+
+message OrSetMember {
+	required bytes value = 1;	
+}
+message OrSet {
+	repeated OrSetMember add_items = 1;
+	repeated OrSetMember del_items = 2;
+}
+
+message DelRq {
+	required OrSet orset = 1;
+	required OrSetMember item = 2;
+}
+
+message AddRq {
+	required OrSet orset = 1;
+	required OrSetMember item = 2;	
+}
+
+message NewRq {
+	
+}
+
+message MergeRq {
+	repeated OrSet orset = 1;
+}
+
+// Structure:
+// Datastructure -> op -> args 
